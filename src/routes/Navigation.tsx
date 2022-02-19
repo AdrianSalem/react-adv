@@ -1,8 +1,9 @@
+
 import {
   BrowserRouter as Router,
-  Switch,
   Route,
-  NavLink
+  NavLink,
+  Routes
 } from 'react-router-dom';
 
 import logo from '../logo.svg';
@@ -28,7 +29,9 @@ export const Navigation = () => {
 
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
-        <Switch>
+             {/* <Routes>
+<Route key={to} path={path} element={<Component />} />; */}
+        <Routes>
           <Route path="/about">
             <h1>About</h1>
           </Route>
@@ -38,7 +41,7 @@ export const Navigation = () => {
           <Route path="/">
             <h1>Home</h1>
           </Route>
-        </Switch>
+        </Routes>
       </div>
     </Router>
   );
