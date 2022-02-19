@@ -4,6 +4,7 @@ import {
   NavLink,
   Routes,
 } from "react-router-dom";
+import { ShoppingPage } from "../02-componets-patterns/pages/ShoppingPage";
 
 import logo from "../logo.svg";
 
@@ -19,7 +20,7 @@ export const Navigation = () => {
                 to="/"
                 className={({ isActive }) => (isActive ? "nav-active" : "")}
               >
-                Home
+                Shopping
               </NavLink>
             </li>
             <li>
@@ -45,15 +46,9 @@ export const Navigation = () => {
             renders the first one that matches the current URL. */}
 
         <Routes>
-          <Route path="/about">
-            <h1>About</h1>
-          </Route>
-          <Route path="/users">
-            <h1>Users</h1>
-          </Route>
-          <Route path="/">
-            <h1>Home</h1>
-          </Route>
+          <Route path="/about" element={<h1>About</h1>} />
+          <Route path="/users" element={<h1>Users</h1>} />
+          <Route path="/" element={<ShoppingPage/>} />
         </Routes>
       </div>
     </Router>
