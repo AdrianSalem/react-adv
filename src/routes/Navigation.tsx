@@ -1,36 +1,49 @@
-
 import {
   BrowserRouter as Router,
   Route,
   NavLink,
-  Routes
-} from 'react-router-dom';
+  Routes,
+} from "react-router-dom";
 
-import logo from '../logo.svg';
+import logo from "../logo.svg";
 
 export const Navigation = () => {
   return (
     <Router>
       <div className="main-layout">
         <nav>
-            <img src={ logo } alt="React Logo" />
+          <img src={logo} alt="React Logo" />
           <ul>
             <li>
-              <NavLink to="/" activeClassName="nav-active" exact>Home</NavLink>
+              <NavLink
+                to="/"
+                className={({ isActive }) => (isActive ? "nav-active" : "")}
+              >
+                Home
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/about" activeClassName="nav-active" exact>About</NavLink>
+              <NavLink
+                to="/about"
+                className={({ isActive }) => (isActive ? "nav-active" : "")}
+              >
+                About
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/users" activeClassName="nav-active" exact>Users</NavLink>
+              <NavLink
+                to="/users"
+                // className={({ isActive }) => (isActive ? "nav-active" : "")}
+              >
+                Users
+              </NavLink>
             </li>
           </ul>
         </nav>
 
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
-             {/* <Routes>
-<Route key={to} path={path} element={<Component />} />; */}
+
         <Routes>
           <Route path="/about">
             <h1>About</h1>
@@ -45,4 +58,4 @@ export const Navigation = () => {
       </div>
     </Router>
   );
-}
+};
